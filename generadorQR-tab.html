@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador QR</title>
+  <link rel="stylesheet" href="style-tabs.css">
+</head>
+<body>
+  <div class="container-tab">
+    <div class="tab-component">
+      <ul class="tab-list">
+        <ul class="tab-list">
+          <li><a href="#" class="tab-link">URL</a></li>
+          <li><a href="#" class="tab-link">GEOLOCALIZACIÓN</a></li>
+          <li><a href="#" class="tab-link">EMAIL</a></li>
+          <li><a href="#" class="tab-link">TAMAÑO</a></li>
+          <li><a href="#" class="tab-link">WIFI</a></li>
+        </ul>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-content">
+          <div class="tab-pane">
+            <form>
+              <label for="URL">Escribe la URL</label>
+              <input type="text" id="URL" name="URL">
+              <br>
+              <button type="submit" class="enviar">GENERAR</button>
+            </form>
+          </div>
+
+          <div class="tab-pane">
+            <form>
+              <label for="GEOLOCALIZACIÓN">Escribe las coordenadas</label>
+              <input type="text" id="GEOLOCALIZACIÓN" name="GEOLOCALIZACIÓN">
+              <br>
+              <button type="submit" class="enviar">GENERAR</button>
+            </form>
+          </div>
+          <div class="tab-pane">
+            <form>
+              <label for="email">Escribe tu email</label>
+              <input type="email" id="email" name="email">
+              <br>
+              <button type="submit" class="enviar">GENERAR</button>
+            </form>
+          </div>
+          <div class="tab-pane">
+            <p>Elige el tamaño de tu QR</p>
+            <label
+            ><input type="checkbox" id="cbox1" value="first_checkbox" /> 100 x 100</label
+          ><br />
+          
+          <input type="checkbox" id="cbox2" value="second_checkbox" />
+          <label for="cbox2">300 x 300</label>
+          </div>
+          <div class="tab-pane">
+            <div class="swtich-container">
+              <input type="checkbox" id="switch">
+              <p>Escanea el siguiente QR</p>
+              <figure>
+                <img src="images/qr.png" alt="qr" width="100">
+              </figure>
+              <label for="switch" class="lbl"></label>
+            </div>
+          </div>
+
+
+
+      </div>
+      
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
