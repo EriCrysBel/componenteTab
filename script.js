@@ -1,6 +1,7 @@
 const tabLinks= document.querySelectorAll('.tab-link');
 const tabPanes= document.querySelectorAll('.tab-pane');
 
+
 tabLinks.forEach(
   function(link,index){
 
@@ -10,41 +11,25 @@ tabLinks.forEach(
       });
       tabPanes[index].style.display='block';
     })
+    
   }
 );
 
 $('.message a').click(function(){
   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
+///////////////////////////////CODIGO FORMULARIO\\\\\\\\\\\\\\\\\\\\
+document.getElementById('coordsForm').addEventListener('submit', function(event) {
+  var longitud = document.getElementById('longitud').value;
+  var latitud = document.getElementById('latitud').value;
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   // Seleccionar todas las pestañas y contenidos
-//   let tabLinks = document.querySelectorAll('.tab-link');
-//   let tabContents = document.querySelectorAll('.tab-content');
+  if (longitud < -180 || longitud > 180) {
+      event.preventDefault();
+      document.getElementById('errorLongitud').innerHTML = "La longitud debe estar entre -180 y 180.";
+  }
 
-//   // Función para ocultar todos los contenidos de las pestañas
-//   function hideTabContent() {
-//       tabContents.forEach(function (tabContent) {
-//           tabContent.style.display = 'none';
-//       });
-//   }
-
-//   // Función para mostrar el contenido de una pestaña
-//   function showTabContent(id) {
-//       let tabContent = document.querySelector(`#${id}`);
-//       tabContent.style.display = 'block';
-//   }
-
-//   // Ocultar todos los contenidos de las pestañas al inicio
-//   hideTabContent();
-
-//   // Agregar eventos a los enlaces de las pestañas
-//   tabLinks.forEach(function (tabLink) {
-//       tabLink.addEventListener('click', function (event) {
-//           event.preventDefault();
-//           let id = event.target.getAttribute('.tab-link');
-//           hideTabContent();
-//           showTabContent(id);
-//       });
-//   });
-// });
+  if (latitud < -90 || latitud > 90) {
+      event.preventDefault();
+      document.getElementById('errorLatitud').innerHTML = "La latitud debe estar entre -90 y 90.";
+  }
+});
