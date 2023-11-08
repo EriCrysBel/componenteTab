@@ -1,78 +1,173 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .cabecera{
-  display: grid;
-  grid-template-columns: 0.7fr 2fr ; /*fr significa fraccion*/
-  column-gap: 5px;/*column-gap es el espacio entre las columnas*/
   background-color: #1A3648;
   border: solid rgb(255, 255, 255);
-  margin-right: 0.5em;
-  margin:1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+  padding-left: 13em;
+
 }
-@media screen and (max-width: 600px) {
-  .cabecera {
-    display: grid;
-    grid-template-areas: 
-    "logo" 
-    "titulo";
-  }
-  .logo{
-    grid-area: logo;
-    justify-self: center;
 
-  }
-
-  .titulo h1{
-    grid-area: titulo;
-    font-size: 5px;
-  }
+.logo, .titulo{
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
 }
 .logo {
   justify-self: end;
-  width: 100px;
   margin-left: 10px;
-  margin: 1.8em 0em 1em 0em;
+  margin: 0.5em 0em 1em 0em;
+  width: 250px;
 
 }
 .logo img{
+  width: 250px;
   border-radius: 50%;
+  /* box-shadow: black 0.2em 0.2em 0.2em 0.3em ; */
 }
 .titulo{
-  justify-self: start;
-  font-size: 50px;
-  margin-top: 0.3em;
+  font-size: 30px;
+  margin-top: 0.2em;
   padding: 1em;
   font-family: Verdana, sans-serif;
   color: azure;
 }
+.titulo h1{
+  
+}
 
 
+@media screen and (max-width: 480px) {
+  .cabecera {
+    flex-direction: column;
+    margin: 1em;
+    padding-left: 0em;
+}
+.logo, .titulo {
+    text-align: center;
+}
+}
 /*//////////////////empiezan los tabs/////////////////////////////*/
+
+main{
+  border: solid rgba(0, 71, 18, 0.61) ;
+  margin: 1em;
+
+}
 .container-tab{
   border: solid rgba(0, 71, 18, 0.61) ;
-  width: 32%;
   background-color: antiquewhite;
-  margin: 1em;
+  background-image: url(images/fondoQR.png);
+  background-size:auto;
+  background-repeat: no-repeat;
+  
 }
 
 .tab-list li{
   display: inline-block;
   border: solid white;
-  padding: 0.5em;
   background-color: #1A3648;
-  
+  font-size:25px;
+  border-radius: 5px;
+  margin-top: 0.5em;
+
 }
-.tab-list li a{
-  text-decoration: none;
-  color: goldenrod;
+.tab-list li:hover{
+  background-color: goldenrod;
 }
+.tab-list li button{
+  color: rgb(255, 255, 255);
+  padding:1em;
+  background-color: #1A3648;
+  font-size:25px;
+}
+.tab-list li button:hover{
+  color:rgb(255, 255, 255);
+  background-color: #CC9952;
+  cursor: pointer;
+
+}
+
 
 .tab-content .tab-pane{
   display:none;
-  margin-left: 2.5em;
-  margin-bottom: 1.5em;
+  height: 300px;
 }
+
 .tab-content .tab-pane:first-child{
   display:block;
 }
-p{
-  margin: 0.5em;
+.tab-pane{
+  font-size: 30px;
+  color: aliceblue;
+  margin-left: 1.5em;
+}
+.contenido{
+  display: inline-flex;
+}
+.contenido form{
+  margin-top: 40px;
+}
+.contenido img{
+  border-radius: 50%;
+}
+
+.tab-pane .geolocalizacion input{
+  
+}
+.tab-pane .geo{
+  margin: 1em 1em 1em 1em;
+  font-size: 20px;
+  text-decoration: none;
+  color: #1A3648;
+  padding:0.5em;
+  background-color:rgb(255, 255, 255) ;
+  font-size:25px;
+  border-radius: 5px;
+}
+.tab-pane button{
+  margin: 1em 1em 1em 1em;
+  font-size: 20px;
+  text-decoration: none;
+  color: #1A3648;
+  padding:0.5em;
+  font-size:25px;
+  border-radius: 5px;
+}
+.tab-pane button:hover{
+  cursor:pointer;
+  font-weight: bolder;
+}
+.tab-pane .qr img{
+  width: 200px;
+  border-radius: 0%;
+}
+.tab-pane .contenido .wifi{
+  background-color: #1A3648;
+}
+.wifi p{
+
+  text-shadow: black 0.1em 0.05em ;
+  margin-top: 3.5em;
+  
+
+}
+
+
+footer{
+  background-color: #1A3648;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+}
+footer a{
+  color: white;
 }
