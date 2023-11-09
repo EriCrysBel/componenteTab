@@ -77,8 +77,12 @@ main{
   font-size:25px;
   border-radius: 5px;
   margin-top: 0.5em;
-
 }
+
+.tab-list li button:focus{
+  background-color:#CC9952;
+}
+
 .tab-list li:hover{
   background-color: goldenrod;
 }
